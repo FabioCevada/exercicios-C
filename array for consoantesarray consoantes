@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <ctype.h>
+
+int main() {
+    char caracteres[10];
+    int num_consoantes = 0;
+
+    // Solicita ao usuário que insira os 10 caracteres
+    printf("Digite os 10 caracteres:\n");
+
+    // Lê os 10 caracteres e os armazena no array caracteres[]
+    for (int i = 0; i < 10; i++) {
+        printf("Caractere %d: ", i + 1);
+        scanf(" %c", &caracteres[i]); // Note o espaço antes do %c para evitar problemas com o buffer de entrada
+    }
+
+    printf("\nConsoantes lidas:\n");
+
+    // Verifica cada caractere para determinar se é uma consoante
+    for (int i = 0; i < 10; i++) {
+        char c = tolower(caracteres[i]); // Converte o caractere para minúsculo para facilitar a comparação
+
+        if ((c >= 'a' && c <= 'z') && c != 'a' && c != 'e' && c != 'i' && c != 'o' && c != 'u') {
+            printf("%c ", caracteres[i]); // Se for consoante, imprime o caractere
+            num_consoantes++; // Incrementa o contador de consoantes
+        }
+    }
+
+    // Exibe o número total de consoantes lidas
+    printf("\nTotal de consoantes lidas: %d\n", num_consoantes);
+
+    return 0;
+}
