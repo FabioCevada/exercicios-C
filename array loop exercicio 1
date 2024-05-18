@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int main() {
+    int numeros[5];
+    int i, numero_busca, encontrado = 0;
+
+    // Ler os 5 números e armazená-los no array
+    printf("Digite 5 números:\n");
+    for(i = 0; i < 5; i++) {
+        printf("Número %d: ", i+1);
+        scanf("%d", &numeros[i]);
+    }
+
+    // Solicitar o número a ser buscado
+    printf("Digite o número que deseja buscar: ");
+    scanf("%d", &numero_busca);
+
+    // Verificar se o número está no array
+    for(i = 0; i < 5; i++) {
+        if(numeros[i] == numero_busca) {
+            encontrado = 1;
+            break;
+        }
+    }
+
+    // Exibir o resultado da busca
+    if(encontrado) {
+        printf("O número %d foi encontrado no array.\n", numero_busca);
+    } else {
+        printf("O número %d não foi encontrado no array.\n", numero_busca);
+    }
+
+    return 0;
+}
