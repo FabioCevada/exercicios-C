@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    int idade;
+    int contador = 0;
+    int pessoas_maiores = 0;
+
+    // Loop para receber a idade de 5 pessoas
+    while (contador < 5) {
+        printf("Digite a idade da pessoa %d: ", contador + 1);
+        scanf("%d", &idade);
+
+        // Verifica se a idade é maior que 18 anos
+        if (idade > 18) {
+            pessoas_maiores++;
+        }
+
+        contador++;
+    }
+
+    printf("Total de pessoas maiores que 18 anos: %d\n", pessoas_maiores);
+
+    return 0;
+}
